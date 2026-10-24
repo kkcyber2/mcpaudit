@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcpaudit"
+version = "1.0.0"
+description = "Tamper-evident audit log for agent tool calls"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Konain Sultan Khan", email = "kkdev9715@gmail.com"}]
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+mcpaudit = "mcpaudit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mcpaudit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
